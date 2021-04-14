@@ -1,0 +1,10 @@
+
+alias -s tif="open"
+alias -s tiff="open"
+alias -s png="open"
+alias -s jpg="open"
+alias -s jpeg="open"
+alias -s JPG="open"
+alias -s gif="open"
+alias -s svg="open"
+alias -s psd="open"
