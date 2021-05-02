@@ -30,6 +30,7 @@ alias gfp="git push --force"
 alias ga="git-add"
 alias gf="git ls-files | grep"
 alias gcu="git-checkout-upsert"
+alias gs="git status"
 
 ###############################################################
 # Intuitive map function
@@ -74,3 +75,9 @@ alias docker-nuke='docker system prune -f --all --volumes'
 
 # some good ideas here: https://github.com/stevenqzhang/dotfiles/blob/master/.bashrc
 # ditoo https://github.com/isao/dotfiles/blob/master/zsh.d/fzf.zsh
+
+alias youtube-mp3=youtube-dl -x --audio-format mp3 
+
+alias heic2jpg=magick mogrify -monitor -format jpg
+
+alias edit_aliases=code ~/.oh-my-zsh/custom/aliases.zsh

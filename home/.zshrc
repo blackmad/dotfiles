@@ -131,3 +131,6 @@ _fzf_compgen_dir() {
 }
 
 source ~/.tools/fzf-docker/docker-fzf
+
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
