@@ -11,7 +11,7 @@ function git-branch-delete {
     grep --invert-match '\*' |
     cut -c 3- |
     fzf --multi --preview="git log {} --" |
-    xargs --no-run-if-empty git branch --delete --force
+    xargs git branch --delete --force
 }
 
 function git-add {
@@ -25,11 +25,16 @@ function git-checkout-upsert {
 alias gcm="git checkout master"
 alias gd="git-branch-delete "
 alias gp="git pull && git-delete-squashed"
+alias gpu="git push"
 alias gpp="git push"
 alias gfp="git push --force"
 alias ga="git-add"
 alias gf="git ls-files | grep"
 alias gcu="git-checkout-upsert"
+alias grm="git rebase master"
+alias gca="git commit -a"
+alias gcaa="git commit -a --amend"
+alias gs="git status"
 
 ###############################################################
 # Intuitive map function
