@@ -3,7 +3,11 @@
 #####################
 
 function gc {
-  git checkout "`git branch | cut -c 3- | fzf --preview="git log {} --"`"
+  if [[ $1 ]]; then
+    git checkout $1
+  else
+    git checkout "`git branch | cut -c 3- | fzf --preview="git log {} --"`"
+  fi
 }
 
 function git-branch-delete {
@@ -61,7 +65,7 @@ alias castle='cd /Users/blackmad/.homesick/repos/dotfiles/home/'
 alias ec="code $HOME/.zshrc"
 alias reload="source $HOME/.zshrc"
 # edit my main list of aliases
-alias edit_aliases=code ~/.oh-my-zsh/custom/aliases.zsh
+alias edit_aliases="code ~/.oh-my-zsh/custom/aliases.zsh"
 
 function homesick_commit {
   cd /Users/blackmad/.homesick/repos/dotfiles/home/
@@ -85,7 +89,7 @@ alias grep='grep --color=auto'
 alias docker-nuke='docker system prune -f --all --volumes'
 
 # download youtube video as mp3
-alias youtube-mp3=youtube-dl -x --audio-format mp3 
+alias youtube-mp3=youtube-dl -x --audio-format mp3
 
 # convert all HEIC in current dir to jpg
 alias heic2jpg="magick mogrify -monitor -format jpg *heic *HEIC"
