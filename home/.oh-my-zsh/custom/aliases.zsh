@@ -2,6 +2,14 @@
 ### git
 #####################
 
+function git_guess_main_branch_name {
+  if git show-ref --quiet refs/heads/main; then
+    echo -n main
+  else
+    echo -n master
+  fi
+}
+
 function gc {
   if [[ $1 ]]; then
     git checkout $1
@@ -26,7 +34,7 @@ function git-checkout-upsert {
 	git checkout $1 2>/dev/null || git checkout -b $1;
 }
 
-alias gcm="git checkout master"
+alias gcm="git checkout $(git_guess_main_branch_name)"
 alias gd="git-branch-delete "
 alias gp="git pull && git-delete-squashed"
 alias gpu="git push"
@@ -35,9 +43,9 @@ alias gfp="git push --force"
 alias ga="git-add"
 alias gf="git ls-files | grep"
 alias gcu="git-checkout-upsert"
-alias grm="git rebase master"
+alias grm="git rebase $(git_guess_main_branch_name)"
 alias gca="git commit -a"
-alias gcaa="git commit -a --amend"
+alias gcaa="git commit -a --amend --no-edit"
 alias gs="git status"
 
 ###############################################################
@@ -86,6 +94,24 @@ alias chrome='open -a Google\ Chrome'
 alias download="curl -O"
 alias grep='grep --color=auto'
 
+
+###############################################################
+# DOCKER
+###############################################################
+# https://www.calazan.com/docker-cleanup-commands/
+
+# Kill all running containers.
+alias docker-killall='docker kill $(docker ps -q)'
+
+# Delete all stopped containers.
+alias docker-cleanc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker ps -a -q)'
+
+# Delete all untagged images.
+alias docker-cleani='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -q -f dangling=true)'
+
+# Delete all stopped containers and untagged images.
+alias docker-clean='docker-cleanc || true && docker-cleani'
+
 alias docker-nuke='docker system prune -f --all --volumes'
 
 # download youtube video as mp3
@@ -96,7 +122,7 @@ alias heic2jpg="magick mogrify -monitor -format jpg *heic *HEIC"
 # convert all arguments to jpg
 alias tojpg=magick mogrify -monitor -format jpg
 
-
+alias curl="figlet are you sure you don\'t want to use http\? && curl"
 
 # some good ideas here: https://github.com/stevenqzhang/dotfiles/blob/master/.bashrc
 # ditoo https://github.com/isao/dotfiles/blob/master/zsh.d/fzf.zsh

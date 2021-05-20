@@ -1,4 +1,4 @@
-brew install exa fzf fd
+brew install exa fzf fd figlet
 
 mkdir ~/.tools/
 git clone https://github.com/MartinRamm/fzf-docker.git ~/.tools/fzf-docker
