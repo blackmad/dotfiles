@@ -34,7 +34,14 @@ function git-checkout-upsert {
 	git checkout $1 2>/dev/null || git checkout -b $1;
 }
 
-alias gcm="git checkout $(git_guess_main_branch_name)"
+function gcm {
+  git checkout $(git_guess_main_branch_name)
+}
+
+function grm {
+  git rebase $(git_guess_main_branch_name)
+}
+
 alias gd="git-branch-delete "
 alias gp="git pull && git-delete-squashed"
 alias gpu="git push"
@@ -43,7 +50,6 @@ alias gfp="git push --force"
 alias ga="git-add"
 alias gf="git ls-files | grep"
 alias gcu="git-checkout-upsert"
-alias grm="git rebase $(git_guess_main_branch_name)"
 alias gca="git commit -a"
 alias gcaa="git commit -a --amend --no-edit"
 alias gs="git status"
@@ -122,6 +128,8 @@ alias heic2jpg="magick mogrify -monitor -format jpg *heic *HEIC"
 # convert all arguments to jpg
 alias tojpg=magick mogrify -monitor -format jpg
 
+alias googlebot='\curl --user-agent "Googlebot/2.1 (+http://www.google.com/bot.html)" -v'
+alias twitterbot='\curl -A Twitterbot'
 alias curl="figlet are you sure you don\'t want to use http\? && curl"
 
 # some good ideas here: https://github.com/stevenqzhang/dotfiles/blob/master/.bashrc
