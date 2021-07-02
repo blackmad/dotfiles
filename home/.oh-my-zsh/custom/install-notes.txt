@@ -7,3 +7,5 @@ git clone https://github.com/MartinRamm/fzf-docker.git ~/.tools/fzf-docker
 git config --global pull.rebase true
 git config --global fetch.prune true
 git config --global diff.colorMoved zebra
+
+sudo spctl --master-disable
