@@ -121,7 +121,7 @@ alias docker-clean='docker-cleanc || true && docker-cleani'
 alias docker-nuke='docker system prune -f --all --volumes'
 
 # download youtube video as mp3
-alias youtube-mp3=youtube-dl -x --audio-format mp3
+alias youtube-mp3="youtube-dl -x --audio-format mp3"
 
 # convert all HEIC in current dir to jpg
 alias heic2jpg="magick mogrify -monitor -format jpg *heic *HEIC"
@@ -134,3 +134,5 @@ alias curl="figlet are you sure you don\'t want to use http\? && curl"
 
 # some good ideas here: https://github.com/stevenqzhang/dotfiles/blob/master/.bashrc
 # ditoo https://github.com/isao/dotfiles/blob/master/zsh.d/fzf.zsh
+
+alias brew-dump="brew bundle dump  --global -f"

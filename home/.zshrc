@@ -134,3 +134,9 @@ source ~/.tools/fzf-docker/docker-fzf
 
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$HOME/.bin:$PATH"
+
+include () {
+    [[ -f "$1" ]] && source "$1"
+}
+
+include /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
