@@ -49,7 +49,7 @@ function git-delete-squashed {
   git checkout -q $TARGET_BRANCH && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base $TARGET_BRANCH $branch) && [[ $(git cherry $TARGET_BRANCH $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done
 }
 
-function git-commit-and-message {
+function _git-commit-and-message {
   git commit -a -m "$*"
 }
 
@@ -64,7 +64,9 @@ alias gcu="git-checkout-upsert"
 alias gca="git commit -a"
 alias gcaa="git commit -a --amend --no-edit"
 alias gs="git status"
-alias gcam="git add -A && git-commit-and-message"
+alias gcam="git add -A && _git-commit-and-message"
+
+alias _git-root="git rev-parse --show-toplevel"
 
 
 ###############################################################
