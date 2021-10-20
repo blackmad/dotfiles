@@ -49,6 +49,10 @@ function git-delete-squashed {
   git checkout -q $TARGET_BRANCH && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base $TARGET_BRANCH $branch) && [[ $(git cherry $TARGET_BRANCH $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done
 }
 
+function git-commit-and-message {
+  git commit -a -m "$*"
+}
+
 alias gd="git-branch-delete"
 alias gp="git pull && git-delete-squashed"
 alias gpu="git push"
@@ -60,6 +64,8 @@ alias gcu="git-checkout-upsert"
 alias gca="git commit -a"
 alias gcaa="git commit -a --amend --no-edit"
 alias gs="git status"
+alias gcam="git add -A && git-commit-and-message"
+
 
 ###############################################################
 # Intuitive map function
