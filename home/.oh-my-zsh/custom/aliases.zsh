@@ -2,6 +2,7 @@
 ### git
 #####################
 
+
 function git_guess_main_branch_name {
   if git show-ref --quiet refs/heads/main; then
     echo -n main
@@ -42,7 +43,13 @@ function grm {
   git rebase $(git_guess_main_branch_name)
 }
 
-alias gd="git-branch-delete "
+function git-delete-squashed {
+  TARGET_BRANCH=`git_guess_main_branch_name`
+  
+  git checkout -q $TARGET_BRANCH && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base $TARGET_BRANCH $branch) && [[ $(git cherry $TARGET_BRANCH $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done
+}
+
+alias gd="git-branch-delete"
 alias gp="git pull && git-delete-squashed"
 alias gpu="git push"
 alias gpp="git push"
