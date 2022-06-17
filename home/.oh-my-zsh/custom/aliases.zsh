@@ -31,8 +31,15 @@ function git-add {
   git add $(git ls-files --modified --others --exclude-standard | fzf -m)
 }
 
+# Create a slug from a string
+# https://gist.github.com/oneohthree/f528c7ae1e701ad990e6
+function slugify {
+    echo "$@" | iconv -t ascii//TRANSLIT | sed -E 's/[^a-zA-Z0-9]+/-/g' | sed -E 's/^-+\|-+$//g' | tr '[:upper:]' '[:lower:]'
+}
+
 function git-checkout-upsert {
-	git checkout $1 2>/dev/null || git checkout -b $1;
+  BRANCH=$(slugify $@)
+	git checkout $BRANCH 2>/dev/null || git checkout -b $BRANCH;
 }
 
 function gcm {

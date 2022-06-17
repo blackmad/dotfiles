@@ -1,2 +1,6 @@
 # source un-checked-in config
-source ~/.`hostname`.zsh
+FILENAME=~/.`hostname`.zsh
+
+if test -f "$FILENAME"; then
+    source $FILENAME
+fi
