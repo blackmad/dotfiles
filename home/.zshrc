@@ -146,3 +146,4 @@ export ANDROID_HOME=~/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 export JAVA_HOME=/usr/local/opt/openjdk@8
+eval "$(notion completion --install)"
