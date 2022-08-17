@@ -86,6 +86,23 @@ alias gcam="git add -A && _git-commit-and-message"
 
 alias _git-root="git rev-parse --show-toplevel"
 
+function notify {
+  EXIT_STATUS=$?
+
+  set -x
+
+  NOTIFICATION="${@-foo}"
+  if [ -z $1 ]; then
+    NOTIFICATION="Done!"
+  fi
+
+  if [[ $EXIT_STATUS == 0 ]]; then
+    osascript -e "display notification \"$NOTIFICATION\" with title \"Success!\""
+  else
+    osascript -e "display notification \"FAIL: $NOTIFICATION\" with title \"ERROR $EXIT_STATUS!\""
+  fi
+}
+
 ###############################################################
 # Intuitive map function
 # For example, to list all directories that contain a certain file:
@@ -114,8 +131,13 @@ alias reload="source $HOME/.zshrc"
 alias edit_aliases="code ~/.oh-my-zsh/custom/aliases.zsh"
 
 function homesick_commit {
+  MESSAGE="$@"
+  if [ -z $1 ]; then
+    MESSAGE="stuff!"
+  fi
+
   cd /Users/blackmad/.homesick/repos/dotfiles/home/
-  git commit -a -m stuff && git push
+  git commit -a -m "$MESSAGE" && git push
 }
 
 ###############################################################
