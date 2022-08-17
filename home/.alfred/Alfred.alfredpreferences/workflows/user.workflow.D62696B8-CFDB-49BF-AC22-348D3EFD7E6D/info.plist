@@ -7,8 +7,6 @@
 	<key>connections</key>
 	<dict>
 		<key>3E554F3A-9D95-4D8B-9797-FDE6FDA14DCD</key>
-		<array/>
-		<key>B8F1DC03-0FA5-4AD7-9999-CA59F01F215B</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -23,13 +21,13 @@
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string>Vero Pepperrell</string>
+	<string>David Blackman</string>
 	<key>description</key>
-	<string>Learn how to connect a keyword to different actions and outputs</string>
+	<string></string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Keywords - Getting Started</string>
+	<string>Work</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -50,27 +48,6 @@
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>3E554F3A-9D95-4D8B-9797-FDE6FDA14DCD</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>work</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>open work</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>B8F1DC03-0FA5-4AD7-9999-CA59F01F215B</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -118,18 +95,9 @@ Type your keyword into Alfred, followed by your input text if needed, and you'll
 		<key>B7396A6C-765C-4F8E-964E-81B2E456DDC8</key>
 		<dict>
 			<key>xpos</key>
-			<real>550</real>
+			<real>335</real>
 			<key>ypos</key>
-			<real>135</real>
-		</dict>
-		<key>B8F1DC03-0FA5-4AD7-9999-CA59F01F215B</key>
-		<dict>
-			<key>note</key>
-			<string>Type your keyword into Alfred to trigger this workflow.</string>
-			<key>xpos</key>
-			<real>325</real>
-			<key>ypos</key>
-			<real>105</real>
+			<real>70</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
