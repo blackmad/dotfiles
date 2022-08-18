@@ -49,11 +49,20 @@ function grm {
   git rebase $(git_guess_main_branch_name)
 }
 
+# git pull master + rebase onto master
 function gprm {
   CURRENT_BRANCH=$(git branch --show-current)
+  if [[ $(git diff --stat) != '' ]]; then
+    WAS_DIRTY=0
+  fi
+
+  [ $WAS_DIRTY ] && echo was dirty, saving work in stash
+  [ $WAS_DIRTY ] && git stash
   gcm
+  git pull
   git checkout $CURRENT_BRANCH
   grm
+  [ $WAS_DIRTY ] && git stash pop
 }
 
 function git-rebase-continue {
