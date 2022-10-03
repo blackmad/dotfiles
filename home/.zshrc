@@ -106,8 +106,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="mate ~/.zshrc"
+alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -133,7 +133,7 @@ _fzf_compgen_dir() {
 source ~/.tools/fzf-docker/docker-fzf
 
 export GOPATH="$HOME/go"
-export PATH="$GOPATH/bin:$HOME/.bin:$PATH"
+export PATH="/usr/local/bin:$GOPATH/bin:$HOME/.bin:$PATH"
 
 include () {
     [[ -f "$1" ]] && source "$1"
