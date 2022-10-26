@@ -34,13 +34,14 @@ function jq-key {
 }
 
 function homesick_commit {
+  cd /Users/blackmad/.homesick/repos/dotfiles/home/
+
   MESSAGE="$@"
   if [ -z $1 ]; then
-    MESSAGE="stuff!"
+    git commit -m $MESSAGE && git push
+  else
+    git commit -a && git push
   fi
-
-  cd /Users/blackmad/.homesick/repos/dotfiles/home/
-  git commit -a -m "$MESSAGE" && git push
 }
 
 ###############################################################
