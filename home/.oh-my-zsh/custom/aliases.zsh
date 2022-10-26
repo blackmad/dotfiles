@@ -22,8 +22,12 @@ alias server='serve'
 alias castle='cd /Users/blackmad/.homesick/repos/dotfiles/home/'
 alias ec="code $HOME/.zshrc"
 alias reload="source $HOME/.zshrc"
+
+export CODE_EDITOR="code"
 # edit my main list of aliases
-alias edit_aliases="code ~/.oh-my-zsh/custom/aliases.zsh"
+alias edit_aliases="$CODE_EDITOR ~/.oh-my-zsh/custom/aliases.zsh"
+alias edit-karabiner="$CODE_EDITOR ~/.config/karabiner/karabiner.json"
+alias karabiner-edit=edit-karabiner
 
 function jq-key {
   jq -r '..|.'$1'?| select( . != null )'
