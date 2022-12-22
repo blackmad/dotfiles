@@ -49,6 +49,10 @@ function grm {
   git rebase $(git_guess_main_branch_name)
 }
 
+function git-current-branch {
+  git branch --show-current
+}
+
 # git pull master + rebase onto master
 function gprm {
   CURRENT_BRANCH=$(git branch --show-current)
@@ -67,7 +71,7 @@ function gprm {
 
 function git-rebase-continue {
   git add -A
-  git rebase --continue
+  GIT_EDITOR=true git rebase --continue
 }
 
 function git-delete-squashed {

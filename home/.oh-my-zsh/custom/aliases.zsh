@@ -37,10 +37,11 @@ function homesick_commit {
   cd /Users/blackmad/.homesick/repos/dotfiles/home/
 
   MESSAGE="$@"
-  if [ -z $1 ]; then
-    git commit -m $MESSAGE && git push
-  else
+  if [ -z $MESSAGE ]; then
     git commit -a && git push
+
+  else
+    git commit -a -m $MESSAGE && git push
   fi
 }
 
