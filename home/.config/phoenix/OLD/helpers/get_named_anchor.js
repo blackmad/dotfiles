@@ -21,6 +21,9 @@ function getNamedAnchor ( name ) {
     case 'third-1': return [0, false];
     case 'third-2': return [false, false];
     case 'third-3': return [1, false];
+      /* THIRDS */
+      case 'twothirds-1': return [0, false];
+      case 'twothirds-2': return [1, false];
     /* SIXTHS */
     case 'sixths-1': return [0, 0];
     case 'sixths-2': return [false, 0];
