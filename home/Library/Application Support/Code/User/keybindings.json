@@ -1,0 +1,17 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+alt+p",
+        "command": "editor.action.peekTypeDefinition"
+    },
+    {
+        "key": "cmd+pagedown",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "cmd+pageup",
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus"
+    }
+]
