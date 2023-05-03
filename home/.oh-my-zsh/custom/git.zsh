@@ -14,7 +14,7 @@ function gc {
   if [[ $1 ]]; then
     git checkout $1
   else
-    git checkout "$(git branch | cut -c 3- | fzf --preview="git log {} --")"
+    git checkout "$($(whence -p git) branch | cut -c 3- | fzf --preview="git log {} --")"
   fi
 }
 
