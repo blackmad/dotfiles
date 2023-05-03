@@ -75,3 +75,5 @@ export PATH="$HOME/.tfenv/bin:$PATH"
 # pyenv!
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+
+[ -s "/Users/blackmad/.scm_breeze/scm_breeze.sh" ] && source "/Users/blackmad/.scm_breeze/scm_breeze.sh"
