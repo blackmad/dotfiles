@@ -10,20 +10,21 @@ function git_guess_main_branch_name {
   fi
 }
 
-function gc {
-  if [[ $1 ]]; then
-    git checkout $1
-  else
-    git checkout "$($(whence -p git) branch | cut -c 3- | fzf --preview="git log {} --")"
-  fi
-}
+# Replaced by git-fuzzy-co.py
+# function gc {
+#   if [[ $1 ]]; then
+#     git checkout $1
+#   else
+#     git checkout "$($(whence -p git) branch | cut -c 3- | fzf --preview="git log {} --")"
+#   fi
+# }
 
 function git-branch-delete {
-  git branch |
+  $(whence -p git) branch |
     grep --invert-match '\*' |
     cut -c 3- |
-    fzf --multi --preview="git log {} --" |
-    xargs git branch --delete --force
+    fzf --multi --preview="$(whence -p git) log {} --" |
+    xargs $(whence -p git) branch --delete --force
 }
 
 function git-add {
@@ -98,5 +99,6 @@ alias gs="git status"
 alias gcam="git add -A && _git-commit-and-message"
 alias gch="git checkout HEAD"
 alias gchm="git checkout $(git_guess_main_branch_name)"
+alias gc="git-fuzzy-co.py"
 
 alias _git-root="git rev-parse --show-toplevel"

@@ -26,6 +26,7 @@ alias reload="source $HOME/.zshrc"
 export CODE_EDITOR="code"
 # edit my main list of aliases
 alias edit-aliases="$CODE_EDITOR ~/.oh-my-zsh/custom/aliases.zsh"
+alias edit-zsh="$CODE_EDITOR ~/.oh-my-zsh/custom/"
 alias edit-karabiner="$CODE_EDITOR ~/.config/karabiner/karabiner.json"
 alias zshconfig="$CODE_EDITOR  ~/.zshrc"
 alias ohmyzsh="$CODE_EDITOR  ~/.oh-my-zsh"
