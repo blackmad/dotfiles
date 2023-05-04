@@ -25,11 +25,13 @@ alias reload="source $HOME/.zshrc"
 
 export CODE_EDITOR="code"
 # edit my main list of aliases
-alias edit_aliases="$CODE_EDITOR ~/.oh-my-zsh/custom/aliases.zsh"
+alias edit-aliases="$CODE_EDITOR ~/.oh-my-zsh/custom/aliases.zsh"
 alias edit-karabiner="$CODE_EDITOR ~/.config/karabiner/karabiner.json"
 alias zshconfig="$CODE_EDITOR  ~/.zshrc"
 alias ohmyzsh="$CODE_EDITOR  ~/.oh-my-zsh"
 alias karabiner-edit=edit-karabiner
+
+alias millis='function _millis(){ date -r $(( $1/1000 )) "+%c"; };_millis'
 
 function jq-key {
   jq -r '..|.'$1'?| select( . != null )'
