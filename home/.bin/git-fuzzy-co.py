@@ -17,7 +17,7 @@ import sys
 import os
 import subprocess
 
-from subprocess import check_output, check_call, CalledProcessError, STDOUT
+from subprocess import check_output, check_call, CalledProcessError, DEVNULL
 
 
 def git_branches():
@@ -38,7 +38,7 @@ def fuzzy_checkout(branch):
     if the initial checkout call fails.
     """
     try:
-        check_output(["git", "checkout", branch], stderr=STDOUT)
+        check_call(["git", "checkout", branch], stdout=DEVNULL, stderr=DEVNULL)
     except CalledProcessError:
         branches = git_branches()
         branches = sorted(branches, key=lambda b: proximity(branch.upper(), b.upper()))
@@ -49,7 +49,7 @@ def fuzzy_checkout(branch):
                 % (branch, best, 100 * proximity(best, branch))
             )
             try:
-                check_output(["git", "checkout", best], stderr=STDOUT)
+                check_call(["git", "checkout", best])
             except CalledProcessError:
                 return 1
         else:
@@ -60,7 +60,7 @@ def fuzzy_checkout(branch):
                     % (branch, matches[0])
                 )
                 try:
-                    check_output(["git", "checkout", matches[0]], stderr=STDOUT)
+                    check_call(["git", "checkout", matches[0]])
                 except CalledProcessError:
                     return 1
             elif len(matches) > 1:
