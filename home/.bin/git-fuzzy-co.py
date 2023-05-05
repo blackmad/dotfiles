@@ -5,6 +5,11 @@ git fuzzy-checkout
 Same as `git checkout branch`, but with fuzzy matching if checkout fails.
 Turns `git checkout barnch` into `git checkout branch`,
 assuming `branch` is a branch.
+
+If the query is ambiguous, opens up fzf with the query prepopulated to select
+the branch.
+
+Modified from https://gist.githubusercontent.com/shashwatblack/54eb22b09d4cb9c67953f0146e590eb2/raw/c9f3aff68d4ec2427f302d2062eeedfd40d739e8/git-fuzzy-co.py
 """
 
 import difflib
