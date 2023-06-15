@@ -72,8 +72,27 @@ export NVM_DIR="$HOME/.nvm"
 # tfenv!
 export PATH="$HOME/.tfenv/bin:$PATH"
 
-# pyenv!
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
 [ -s "/Users/blackmad/.scm_breeze/scm_breeze.sh" ] && source "/Users/blackmad/.scm_breeze/scm_breeze.sh"
+
+##### Qwak cli auto-complete #####
+source /Users/blackmad/.qwak/qwak-complete.zsh
+##### Qwak cli auto-complete #####
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

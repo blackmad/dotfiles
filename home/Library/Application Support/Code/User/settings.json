@@ -1,0 +1,74 @@
+{
+  "workbench.colorTheme": "Solarized Light",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript", "typescript", "typescriptreact"],
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.minimap.enabled": false,
+  "files.watcherExclude": {
+    "**/.bloop": true,
+    "**/.metals": true,
+    "**/.ammonite": true
+  },
+  "metals.javaHome": "/Users/blackmad/.jabba/jdk/openjdk@1.17.0/Contents/Home",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "cSpell.userWords": ["zpopmin"],
+  "git.autofetch": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "editor.formatOnSave": true,
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "typescript.tsserver.log": "off",
+  "prettier.requireConfig": true,
+  "typescript.tsdk": "node_modules/typescript/shim",
+  "typescript.tsserver.maxTsServerMemory": 16394,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnType": true
+  },
+  "python.formatting.provider": "none",
+  "githubPullRequests.terminalLinksHandler": "github",
+  "githubPullRequests.pullBranch": "never",
+  "editor.accessibilitySupport": "off",
+  "editor.inlineSuggest.enabled": true,
+  "workbench.editor.untitled.hint": "hidden",
+  "eslint.runtime": "/usr/local/bin/node",
+  "debug.javascript.autoAttachFilter": "disabled",
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "terraform.languageServer.enable": true,
+  "terraform.languageServer.indexing.ignorePaths": [
+    "src",
+    "tmp"
+  ],
+  "vscode-pets.position": "panel",
+  "explorer.excludeGitIgnore": true,
+  // Makes it so function headers are sticky — can see at a glance what context you're in while browsing a file essentially.
+  "editor.stickyScroll.enabled": true,
+
+  // When scrolling with a mouse-wheel, make it smooth.
+  "editor.smoothScrolling": true,
+  "window.zoomLevel": 1,
+  "update.showReleaseNotes": false,
+}

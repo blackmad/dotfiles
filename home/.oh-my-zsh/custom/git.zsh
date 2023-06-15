@@ -98,7 +98,7 @@ alias gcaa="git commit -a --amend --no-edit"
 alias gs="git status"
 alias gcam="git add -A && _git-commit-and-message"
 alias gch="git checkout HEAD"
-alias gchm="git checkout $(git_guess_main_branch_name)"
+#alias gchm="git checkout $(git_guess_main_branch_name)"
 alias gc="git-fuzzy-co.py"
 
 alias _git-root="git rev-parse --show-toplevel"
