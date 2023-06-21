@@ -10,3 +10,5 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 mv /tmp/custom/* ~/.oh-my-zsh/
 
 brew bundle --file=~/.Brewfile 
+
+ansible-playbook ~/.first_time/ansible/sudo-touchid.yml
