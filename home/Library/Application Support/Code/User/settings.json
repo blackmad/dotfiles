@@ -3,7 +3,11 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "eslint.validate": ["javascript", "typescript", "typescriptreact"],
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "typescriptreact"
+  ],
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -32,7 +36,9 @@
     "**/.settings": true,
     "**/.factorypath": true
   },
-  "cSpell.userWords": ["zpopmin"],
+  "cSpell.userWords": [
+    "zpopmin"
+  ],
   "git.autofetch": true,
   "eslint.alwaysShowStatus": true,
   "eslint.format.enable": true,
@@ -66,7 +72,6 @@
   "explorer.excludeGitIgnore": true,
   // Makes it so function headers are sticky — can see at a glance what context you're in while browsing a file essentially.
   "editor.stickyScroll.enabled": true,
-
   // When scrolling with a mouse-wheel, make it smooth.
   "editor.smoothScrolling": true,
   "window.zoomLevel": 1,
