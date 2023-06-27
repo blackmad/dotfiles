@@ -27,7 +27,6 @@
     "**/.metals": true,
     "**/.ammonite": true
   },
-  "metals.javaHome": "/Users/blackmad/.jabba/jdk/openjdk@1.17.0/Contents/Home",
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "files.exclude": {
@@ -48,8 +47,6 @@
   },
   "typescript.tsserver.log": "off",
   "prettier.requireConfig": true,
-  "typescript.tsdk": "node_modules/typescript/shim",
-  "typescript.tsserver.maxTsServerMemory": 16394,
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnType": true
@@ -60,7 +57,6 @@
   "editor.accessibilitySupport": "off",
   "editor.inlineSuggest.enabled": true,
   "workbench.editor.untitled.hint": "hidden",
-  "eslint.runtime": "/usr/local/bin/node",
   "debug.javascript.autoAttachFilter": "disabled",
   "terminal.integrated.enableMultiLinePasteWarning": false,
   "terraform.languageServer.enable": true,
@@ -74,6 +70,6 @@
   "editor.stickyScroll.enabled": true,
   // When scrolling with a mouse-wheel, make it smooth.
   "editor.smoothScrolling": true,
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 2,
   "update.showReleaseNotes": false,
 }
