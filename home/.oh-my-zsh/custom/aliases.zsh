@@ -99,3 +99,5 @@ alias curl="figlet are you sure you don\'t want to use http\? && curl"
 # ditoo https://github.com/isao/dotfiles/blob/master/zsh.d/fzf.zsh
 
 alias brew-dump="brew bundle dump  --global -f"
+
+alias ios-simulator="open -a Simulator"

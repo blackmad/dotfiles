@@ -20,7 +20,7 @@
                     {
                         "manipulators": [
                             {
-                                "description": "Change caps_lock to command+control+option (Hyper), tap for escape.",
+                                "description": "Change caps_lock to alt+shift+control+command (Hyper), tap for escape.",
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": {
@@ -34,6 +34,7 @@
                                         "key_code": "left_command",
                                         "modifiers": [
                                             "left_control",
+                                            "left_shift",
                                             "left_option"
                                         ]
                                     }
@@ -57,6 +58,7 @@
                                         "mandatory": [
                                             "left_command",
                                             "left_control",
+                                            "left_shift",
                                             "left_option"
                                         ]
                                     }
@@ -80,6 +82,7 @@
                                         "mandatory": [
                                             "left_command",
                                             "left_control",
+                                            "left_shift",
                                             "left_option"
                                         ]
                                     }
@@ -103,6 +106,7 @@
                                         "mandatory": [
                                             "left_command",
                                             "left_control",
+                                            "left_shift",
                                             "left_option"
                                         ]
                                     }
@@ -126,6 +130,7 @@
                                         "mandatory": [
                                             "left_command",
                                             "left_control",
+                                            "left_shift",
                                             "left_option"
                                         ]
                                     }

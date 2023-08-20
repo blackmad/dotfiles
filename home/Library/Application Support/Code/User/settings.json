@@ -41,7 +41,6 @@
   "git.autofetch": true,
   "eslint.alwaysShowStatus": true,
   "eslint.format.enable": true,
-  "editor.formatOnSave": true,
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
@@ -72,4 +71,16 @@
   "editor.smoothScrolling": true,
   "window.zoomLevel": 2,
   "update.showReleaseNotes": false,
+  "editor.formatOnPaste": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "javascript.updateImportsOnFileMove.enabled": "always"
 }
