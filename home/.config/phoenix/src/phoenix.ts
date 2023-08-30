@@ -1,5 +1,5 @@
 import {frameRatio, moveToFrame} from './calc';
-import {hyper, hyperShift} from './config';
+import {hyper, meh} from './config';
 import {cycleBackward, cycleForward} from './cycle';
 import {onKey} from './key';
 import log from './logger';
@@ -59,9 +59,9 @@ const mouseActionHandler: (target: MousePoint, handler: Event) => void = (
 	target,
 ) => {
 	let type: 'move' | 'resize';
-	if (enableMouseAction && hasMouseModifiers(target, hyper)) {
+	if (enableMouseAction && hasMouseModifiers(target, meh)) {
 		type = 'move';
-	} else if (enableMouseAction && hasMouseModifiers(target, hyperShift)) {
+	} else if (enableMouseAction && hasMouseModifiers(target, hyper)) {
 		type = 'resize';
 	} else {
 		enableMouseAction = false;
@@ -142,8 +142,8 @@ const mouseActionHandler: (target: MousePoint, handler: Event) => void = (
 };
 
 Event.on('mouseDidMove', mouseActionHandler);
+onKey('a', meh, enableMouseActionHandler);
 onKey('a', hyper, enableMouseActionHandler);
-onKey('a', hyperShift, enableMouseActionHandler);
 
 onKey('tab', hyper, async () => {
 	const win = Window.focused();
@@ -376,7 +376,7 @@ onKey('return', hyper, () => {
 	}
 });
 
-onKey('return', hyperShift, () => {
+onKey('return', hyper, () => {
 	const win = Window.focused();
 	if (!win) {
 		return;

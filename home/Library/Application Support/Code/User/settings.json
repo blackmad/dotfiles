@@ -69,7 +69,6 @@
   "editor.stickyScroll.enabled": true,
   // When scrolling with a mouse-wheel, make it smooth.
   "editor.smoothScrolling": true,
-  "window.zoomLevel": 2,
   "update.showReleaseNotes": false,
   "editor.formatOnPaste": false,
   "[javascript]": {
@@ -82,5 +81,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.formatOnSave": true,
-  "javascript.updateImportsOnFileMove.enabled": "always"
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "window.zoomLevel": 1
 }

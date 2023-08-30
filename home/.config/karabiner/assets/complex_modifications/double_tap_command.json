@@ -2,7 +2,7 @@
     "title": "Double tap command rule",
     "rules": [
         {
-            "description": "Press a Key Twice, right_command - Rule - Karabiner-Elements",
+            "description": "Double tap command to open alfred",
             "manipulators": [
                 {
                     "type": "basic",

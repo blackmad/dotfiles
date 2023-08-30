@@ -91,6 +91,7 @@ alias heic2jpg="magick mogrify -monitor -format jpg *heic *HEIC"
 # convert all arguments to jpg
 alias tojpg=magick mogrify -monitor -format jpg
 
+
 alias googlebot='\curl --user-agent "Googlebot/2.1 (+http://www.google.com/bot.html)" -v'
 alias twitterbot='\curl -A Twitterbot'
 alias curl="figlet are you sure you don\'t want to use http\? && curl"
