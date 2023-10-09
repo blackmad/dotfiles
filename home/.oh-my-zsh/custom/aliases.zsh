@@ -13,7 +13,7 @@ alias path='printf "%b\n" "${PATH//:/\\n}"'
 ###############################################################
 # simple local http server
 ###############################################################
-alias serve='python3 -m http.server 800'
+alias serve='python3 -m http.server 8000'
 alias server='serve'
 
 ###############################################################
