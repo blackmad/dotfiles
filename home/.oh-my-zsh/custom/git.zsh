@@ -85,6 +85,26 @@ function _git-commit-and-message {
   git commit -a -m "$*"
 }
 
+function git-ignore() {
+  for platform in "$@"; do
+    result=$(curl -L "http://www.gitignore.io/api/$platform" 2>/dev/null)
+
+    if [[ $result =~ ERROR ]]; then
+      echo "Query '$platform' has no match. See a list of possible queries with 'gi list'"
+    elif [[ $platform = list ]]; then
+      echo "$result"
+    else
+      if [[ -f .gitignore ]]; then
+        result=$(echo "$result" | grep -v "# Created by http://www.gitignore.io")
+        echo ".gitignore already exists, appending"
+        echo "$result" >>.gitignore
+      else
+        echo "$result" >.gitignore
+      fi
+    fi
+  done
+}
+
 alias gd="git-branch-delete"
 alias gp="git pull origin --rebase && sleep 1 && git-delete-squashed"
 alias gpu="git push"
@@ -102,3 +122,14 @@ alias gch="git checkout HEAD"
 alias gc="git-fuzzy-co.py"
 
 alias _git-root="git rev-parse --show-toplevel"
+
+function github_checkout() {
+  url=$1
+  if [[ $url == *"github.com/blackmad"* ]]; then
+    git_url=$(echo "$url" | sed 's/github.com\/blackmad/github.com:blackmad/' | sed 's/https:\/\//git@/' | sed 's/\/$//' | sed 's/$/.git/')
+    echo "Using git url instead: $git_url"
+    git clone "$git_url"
+  else
+    git clone "$url"
+  fi
+}

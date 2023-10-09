@@ -13,7 +13,7 @@ alias path='printf "%b\n" "${PATH//:/\\n}"'
 ###############################################################
 # simple local http server
 ###############################################################
-alias serve='python -m SimpleHTTPServer'
+alias serve='python3 -m http.server 800'
 alias server='serve'
 
 ###############################################################
@@ -91,10 +91,9 @@ alias heic2jpg="magick mogrify -monitor -format jpg *heic *HEIC"
 # convert all arguments to jpg
 alias tojpg=magick mogrify -monitor -format jpg
 
-
 alias googlebot='\curl --user-agent "Googlebot/2.1 (+http://www.google.com/bot.html)" -v'
 alias twitterbot='\curl -A Twitterbot'
-alias curl="figlet are you sure you don\'t want to use http\? && curl"
+#alias curl="figlet are you sure you don\'t want to use http\? && curl"
 
 # some good ideas here: https://github.com/stevenqzhang/dotfiles/blob/master/.bashrc
 # ditoo https://github.com/isao/dotfiles/blob/master/zsh.d/fzf.zsh
@@ -102,3 +101,8 @@ alias curl="figlet are you sure you don\'t want to use http\? && curl"
 alias brew-dump="brew bundle dump  --global -f"
 
 alias ios-simulator="open -a Simulator"
+
+alias python="python3"
+alias pip="pip3"
+
+alias via="open ~/Code/breasts/training/via.html"
