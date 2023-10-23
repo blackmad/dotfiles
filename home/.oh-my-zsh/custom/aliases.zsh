@@ -84,7 +84,7 @@ alias docker-clean='docker-cleanc || true && docker-cleani'
 alias docker-nuke='docker system prune -f --all --volumes'
 
 # download youtube video as mp3
-alias youtube-mp3="youtube-dl -x --audio-format mp3"
+alias youtube-mp3="yt-dlp -x --audio-format mp3"
 
 # convert all HEIC in current dir to jpg
 alias heic2jpg="magick mogrify -monitor -format jpg *heic *HEIC"
