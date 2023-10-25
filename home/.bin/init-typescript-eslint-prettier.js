@@ -6,6 +6,11 @@ const path = require('path');
 const exec = util.promisify(cp.exec);
 const writeFile = util.promisify(fs.writeFile);
 
+const ignoreContents = `package-lock.json
+yarn.lock
+.yarn/releases
+`
+
 const prettierConfigVscode = {
     'editor.codeActionsOnSave': {
         'source.fixAll': true,
@@ -67,6 +72,29 @@ const packages = [
     'prettier',
 ];
 
+const execCommand = async (command) => {
+    return new Promise((resolve, reject) => {
+      const [cmd, ...args] = command.split(' ');
+      const childProcess = cp.spawn(cmd, args);
+      childProcess.stdout.on('data', (data) => {
+        process.stdout.write(data.toString());
+      });
+      childProcess.stderr.on('data', (data) => {
+        process.stderr.write(data.toString());
+      });
+      childProcess.on('error', (error) => {
+        reject(error);
+      });
+      childProcess.on('exit', (code) => {
+        if (code === 0) {
+          resolve();
+        } else {
+          reject(new Error(`Command exited with code ${code}.`));
+        }
+      });
+    });
+  };
+
 (async () => {
     const vscodeDirPath = path.join(__dirname, '.vscode');
 
@@ -93,7 +121,13 @@ const packages = [
         ...prettierConfigVscode,
     };
 
+    const installCommand = `yarn add -D ${packages.join(' ')}`
+
     await Promise.all([
+        writeFile(
+            '.ignore',
+            ignoreContents,
+        ).then(() => console.log('writing new .ignore settings')),
         writeFile(
             workspacePath,
             JSON.stringify(workspaceSettings, null, 2),
@@ -105,9 +139,8 @@ const packages = [
         writeFile(
             '.prettierrc.json',
             JSON.stringify(prettierRc, null, 2),
-        ).then(() => console.log('writing new .prettierrc.json')),
-        exec(`npm i -D ${packages.join(' ')}`)
-            .then(({ stdout }) => console.log(stdout))
+        ).then(() => { console.log('writing new .prettierrc.json'); console.log(`installing packages with\n\t${installCommand}`); }),
+        execCommand(installCommand)
             .catch(console.log),
     ]);
     

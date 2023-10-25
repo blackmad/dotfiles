@@ -13,5 +13,13 @@
         "key": "cmd+pageup",
         "command": "workbench.action.terminal.focusPreviousPane",
         "when": "terminalFocus"
+    },
+    {
+        "key": "alt+cmd+0",
+        "command": "-workbench.action.toggleEditorGroupLayout"
+    },
+    {
+        "key": "alt+cmd+0",
+        "command": "workbench.action.editorLayoutSingle"
     }
 ]

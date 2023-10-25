@@ -82,3 +82,12 @@ zplug "grigorii-zander/zsh-npm-scripts-autocomplete"
 plugins=(git)
 
 export PATH=$PATH:~/.bin
+
+# Make `cd` from a vscode terminal go to the workspace root
+# Assume the following is in vscode settings:
+# "terminal.integrated.env.linux":  {"VSCODE_WS": "${workspaceFolder}"},
+# "terminal.integrated.env.windows":{"VSCODE_WS": "${workspaceFolder}"},
+# When in filemode / not in a workspace, `VSCODE_WS` is set to the literal `${workspaceFolder}` so we check and ignore that
+if [[ -v VSCODE_WS ]] && [[ "$VSCODE_WS" != '${workspaceFolder}' ]]; then
+    alias cd="HOME=\"${VSCODE_WS}\" cd"
+fi
