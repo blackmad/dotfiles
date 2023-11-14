@@ -38,6 +38,7 @@ const eslintRc = {
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:prettier/recommended',
+        'eslint-plugin-unused-imports'
     ],
     rules: {
       complexity: [ 'warn', 10 ],
@@ -47,12 +48,12 @@ const eslintRc = {
       '@typescript-eslint/no-unused-vars': 'error',
       '@typescript-eslint/no-non-null-assertion': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
-      'padding-line-between-statements': [
-        'error',
-        { blankLine: 'always', prev: '*', next: 'if' },
-        { blankLine: 'always', prev: '*', next: 'block-like' },
-        { blankLine: 'always', prev: '*', next: 'block' }
-      ]
+    //   'padding-line-between-statements': [
+    //     'error',
+    //     { blankLine: 'always', prev: '*', next: 'if' },
+    //     { blankLine: 'always', prev: '*', next: 'block-like' },
+    //     { blankLine: 'always', prev: '*', next: 'block' }
+    //   ]
     },
 };
 
@@ -70,6 +71,7 @@ const packages = [
     'eslint-plugin-prettier',
     'eslint',
     'prettier',
+    'eslint-plugin-unused-imports'
 ];
 
 const execCommand = async (command) => {

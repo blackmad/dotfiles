@@ -79,7 +79,7 @@ export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
 zplug "grigorii-zander/zsh-npm-scripts-autocomplete"
 
-plugins=(git)
+plugins=(git z)
 
 export PATH=$PATH:~/.bin
 
@@ -91,3 +91,5 @@ export PATH=$PATH:~/.bin
 if [[ -v VSCODE_WS ]] && [[ "$VSCODE_WS" != '${workspaceFolder}' ]]; then
     alias cd="HOME=\"${VSCODE_WS}\" cd"
 fi
+
+source /tmp/xfdsfsd
