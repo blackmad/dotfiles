@@ -73,13 +73,14 @@ ZSH_THEME="robbyrussell"
 
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
-source $ZSH/oh-my-zsh.sh
-
 export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
 zplug "grigorii-zander/zsh-npm-scripts-autocomplete"
+zplug "g-plane/zsh-yarn-autocompletions", hook-build:"./zplug.zsh", defer:2
 
-plugins=(git z)
+plugins=(git z zsh-syntax-highlighting zsh-autosuggestions yarn-autocompletions)
+
+source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:~/.bin
 
@@ -92,4 +93,7 @@ if [[ -v VSCODE_WS ]] && [[ "$VSCODE_WS" != '${workspaceFolder}' ]]; then
     alias cd="HOME=\"${VSCODE_WS}\" cd"
 fi
 
-source /tmp/xfdsfsd
+DROPBOX_SECRETS_FILE=~/Dropbox/Credentials/personal-secrets.zsh
+if [[ -f $DROPBOX_SECRETS_FILE ]]; then
+    source $DROPBOX_SECRETS_FILE
+fi
