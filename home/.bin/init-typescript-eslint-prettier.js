@@ -48,6 +48,14 @@ const eslintRc = {
       '@typescript-eslint/no-unused-vars': 'error',
       '@typescript-eslint/no-non-null-assertion': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
+      'sort-imports': ['error'],
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+          "warn",
+          { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+      ]
     //   'padding-line-between-statements': [
     //     'error',
     //     { blankLine: 'always', prev: '*', next: 'if' },
@@ -71,7 +79,8 @@ const packages = [
     'eslint-plugin-prettier',
     'eslint',
     'prettier',
-    'eslint-plugin-unused-imports'
+    'eslint-plugin-unused-imports',
+    'sort-imports'
 ];
 
 const execCommand = async (command) => {

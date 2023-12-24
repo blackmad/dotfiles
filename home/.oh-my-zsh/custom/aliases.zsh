@@ -106,3 +106,10 @@ alias python="python3"
 alias pip="pip3"
 
 alias via="open ~/Code/breasts/training/via.html"
+
+alias find-empty-directories="find . -type d -empty"
+
+alias mdfind-cwd="mdfind -onlyin ."
+
+alias xargs-map="xargs -t -n1"
+alias xargs-newline="tr '\n' '\0' | xargs -n1 -t -0"

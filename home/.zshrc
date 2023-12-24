@@ -24,18 +24,13 @@ ZSH_THEME="robbyrussell"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+zstyle ':omz:update' mode auto # update automatically without asking
 
 # Uncomment the following line to change how often to auto-update (in days).
 # zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -80,9 +75,11 @@ zplug "g-plane/zsh-yarn-autocompletions", hook-build:"./zplug.zsh", defer:2
 
 plugins=(git z zsh-syntax-highlighting zsh-autosuggestions yarn-autocompletions)
 
+# alias cd=z
+
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$PATH:~/.bin
+export PATH=$PATH:~/.bin:~/.yarn/bin
 
 # Make `cd` from a vscode terminal go to the workspace root
 # Assume the following is in vscode settings:
