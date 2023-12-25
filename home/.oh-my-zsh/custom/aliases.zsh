@@ -58,7 +58,7 @@ alias spot="mdfind -onlyin $(pwd)"
 ###############################################################
 # command aliases
 ###############################################################
-alias ls=exa
+alias ls=eza
 alias local-ip="ipconfig getifaddr en1"
 alias chrome='open -a Google\ Chrome'
 alias download="curl -O"
