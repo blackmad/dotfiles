@@ -94,3 +94,5 @@ DROPBOX_SECRETS_FILE=~/Dropbox/Credentials/personal-secrets.zsh
 if [[ -f $DROPBOX_SECRETS_FILE ]]; then
     source $DROPBOX_SECRETS_FILE
 fi
+
+[ -s "/Users/blackmad/.scm_breeze/scm_breeze.sh" ] && source "/Users/blackmad/.scm_breeze/scm_breeze.sh"

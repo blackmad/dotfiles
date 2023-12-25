@@ -112,4 +112,4 @@ alias find-empty-directories="find . -type d -empty"
 alias mdfind-cwd="mdfind -onlyin ."
 
 alias xargs-map="xargs -t -n1"
-alias xargs-newline="tr '\n' '\0' | xargs -n1 -t -0"
+alias xargs-newline="tr '\n' '\0' | xargs -n1 -t -0"ech
