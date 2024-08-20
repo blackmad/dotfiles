@@ -2,12 +2,26 @@
 ### git
 #####################
 
-function git_guess_main_branch_name {
-  if git show-ref --quiet refs/heads/main; then
-    echo -n main
-  else
-    echo -n master
+# Check if main exists and use instead of master
+function git_main_branch() {
+  FROM_GH=$(gh repo view --json defaultBranchRef --jq '.defaultBranchRef.name')
+  if [[ $FROM_GH ]]; then
+    echo $FROM_GH
+    return 0
   fi
+
+  command git rev-parse --git-dir &>/dev/null || return
+  local ref
+  for ref in refs/{heads,remotes/{origin,upstream}}/{main,trunk,mainline,default,stable,master}; do
+    if command git show-ref -q --verify $ref; then
+      echo ${ref:t}
+      return 0
+    fi
+  done
+
+  # If no main branch was found, fall back to master but return error
+  echo master
+  return 1
 }
 
 # Replaced by git-fuzzy-co.py
@@ -43,11 +57,11 @@ function git-checkout-upsert {
 }
 
 function gcm {
-  git checkout $(git_guess_main_branch_name)
+  git checkout $(git_main_branch)
 }
 
 function grm {
-  git rebase $(git_guess_main_branch_name)
+  git rebase $(git_main_branch)
 }
 
 function git-current-branch {
@@ -76,7 +90,7 @@ function git-rebase-continue {
 }
 
 function git-delete-squashed {
-  TARGET_BRANCH=$(git_guess_main_branch_name)
+  TARGET_BRANCH=$(git_main_branch)
 
   git checkout -q $TARGET_BRANCH && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base $TARGET_BRANCH $branch) && [[ $(git cherry $TARGET_BRANCH $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done
 }

@@ -21,5 +21,28 @@
     {
         "key": "alt+cmd+0",
         "command": "workbench.action.editorLayoutSingle"
+    },
+    {
+        "key": "ctrl ctrl",
+        "command": "workbench.action.navigateBack",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "shift shift",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "shift+cmd+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "shift+cmd+c",
+        "command": "workbench.panel.chat.view.copilot.focus"
+    },
+    {
+        "key": "ctrl+alt+cmd+-",
+        "command": "workbench.action.navigateBack",
+        "when": "!terminalFocus"
     }
 ]

@@ -112,4 +112,7 @@ alias find-empty-directories="find . -type d -empty"
 alias mdfind-cwd="mdfind -onlyin ."
 
 alias xargs-map="xargs -t -n1"
-alias xargs-newline="tr '\n' '\0' | xargs -n1 -t -0"ech
+alias xargs-newline="tr '\n' '\0' | xargs -n1 -t -0"
+
+alias sidecar-ipad="SidecarLauncher connect \"David Blackman’s iPad\""
+alias ipad-sidecar=sidecar-ipad

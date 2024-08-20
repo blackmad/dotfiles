@@ -80,6 +80,8 @@ plugins=(git z zsh-syntax-highlighting zsh-autosuggestions yarn-autocompletions)
 source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:~/.bin:~/.yarn/bin
+export PATH="/opt/homebrew/opt/icu4c/bin:/opt/homebrew/opt/icu4c/sbin:$PATH"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/icu4c/lib/pkgconfig"
 
 # Make `cd` from a vscode terminal go to the workspace root
 # Assume the following is in vscode settings:
@@ -96,3 +98,34 @@ if [[ -f $DROPBOX_SECRETS_FILE ]]; then
 fi
 
 [ -s "/Users/blackmad/.scm_breeze/scm_breeze.sh" ] && source "/Users/blackmad/.scm_breeze/scm_breeze.sh"
+
+# Created by `pipx` on 2024-03-17 09:35:57
+export PATH="$PATH:/Users/blackmad/.local/bin"
+
+export PYTHON=/opt/homebrew/bin/python3
+
+### Automatically installed by `filament install`
+
+function filament {
+    # clean up even if the command is interrupted
+    trap "popd; VIRTUAL_ENV=$OLD_VIRTUAL_ENV" INT
+
+    # clear out virtual env otherwise running poetry will be confused
+    OLD_VIRTUAL_ENV=$VIRTUAL_ENV
+    unset VIRTUAL_ENV
+
+    pushd /Users/blackmad/Filament/devscripts/cli
+    poetry run which python
+    poetry run python -m cli.main $@
+
+    # clean up
+    VIRTUAL_ENV=$OLD_VIRTUAL_ENV
+    popd
+
+    # get rid of the trap handler
+    trap - INT
+}
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"                                       # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion

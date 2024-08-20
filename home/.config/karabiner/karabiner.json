@@ -20,7 +20,7 @@
                     {
                         "manipulators": [
                             {
-                                "description": "Change caps_lock to alt+shift+control+command (Hyper), tap for escape.",
+                                "description": "Change caps_lock to alt+control+command (Hyper), tap for escape.",
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": {
@@ -34,7 +34,6 @@
                                         "key_code": "left_command",
                                         "modifiers": [
                                             "left_control",
-                                            "left_shift",
                                             "left_option"
                                         ]
                                     }
@@ -58,7 +57,6 @@
                                         "mandatory": [
                                             "left_command",
                                             "left_control",
-                                            "left_shift",
                                             "left_option"
                                         ]
                                     }
@@ -82,7 +80,6 @@
                                         "mandatory": [
                                             "left_command",
                                             "left_control",
-                                            "left_shift",
                                             "left_option"
                                         ]
                                     }
@@ -106,7 +103,6 @@
                                         "mandatory": [
                                             "left_command",
                                             "left_control",
-                                            "left_shift",
                                             "left_option"
                                         ]
                                     }
@@ -130,7 +126,6 @@
                                         "mandatory": [
                                             "left_command",
                                             "left_control",
-                                            "left_shift",
                                             "left_option"
                                         ]
                                     }
@@ -138,55 +133,6 @@
                                 "to": [
                                     {
                                         "shell_command": "open '/Applications/iTerm.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Shift_L tap -> '(', Shift_R tap -> ')'",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "left_shift",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": {
-                                    "key_code": "left_shift"
-                                },
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "9",
-                                        "modifiers": [
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "right_shift",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": {
-                                    "key_code": "right_shift"
-                                },
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "0",
-                                        "modifiers": [
-                                            "left_shift"
-                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -249,6 +195,34 @@
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 0,
+                        "vendor_id": 0
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 0,
+                        "vendor_id": 0
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 }
