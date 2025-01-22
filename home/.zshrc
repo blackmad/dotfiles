@@ -73,7 +73,7 @@ source $ZPLUG_HOME/init.zsh
 zplug "grigorii-zander/zsh-npm-scripts-autocomplete"
 zplug "g-plane/zsh-yarn-autocompletions", hook-build:"./zplug.zsh", defer:2
 
-plugins=(git z zsh-syntax-highlighting zsh-autosuggestions yarn-autocompletions)
+plugins=(git z zsh-syntax-highlighting zsh-autosuggestions yarn-autocompletions notify auto-notify web-search)
 
 # alias cd=z
 
@@ -107,20 +107,23 @@ export PYTHON=/opt/homebrew/bin/python3
 ### Automatically installed by `filament install`
 
 function filament {
+    # save the current directory so we can get back to it
+    old_pwd=$(pwd)
+
     # clean up even if the command is interrupted
-    trap "popd; VIRTUAL_ENV=$OLD_VIRTUAL_ENV" INT
+    trap "cd $old_pwd; VIRTUAL_ENV=$OLD_VIRTUAL_ENV" INT
 
     # clear out virtual env otherwise running poetry will be confused
     OLD_VIRTUAL_ENV=$VIRTUAL_ENV
     unset VIRTUAL_ENV
 
-    pushd /Users/blackmad/Filament/devscripts/cli
-    poetry run which python
+    cd /Users/blackmad/Filament/devscripts/cli
+
     poetry run python -m cli.main $@
 
     # clean up
     VIRTUAL_ENV=$OLD_VIRTUAL_ENV
-    popd
+    cd $old_pwd
 
     # get rid of the trap handler
     trap - INT
@@ -129,3 +132,14 @@ function filament {
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"                                       # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
+if [ -f $HOME/.cargo/env ]; then
+    . "$HOME/.cargo/env"   
+fi
+export OP_ACCOUNT="filamentinc"
+
+PATH="/Users/blackmad/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/blackmad/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/blackmad/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/blackmad/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/blackmad/perl5"; export PERL_MM_OPT;
