@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+# Check if jq is installed
+if ! command -v jq &>/dev/null; then
+    echo "Error: jq is required but not installed"
+    exit 1
+fi
+
+# Check if cspell is installed
+if ! command -v cspell &>/dev/null; then
+    echo "cspell not found, attempting to install via npm..."
+    npm install -g cspell || {
+        echo "Failed to install cspell via npm"
+        exit 1
+    }
+fi
+
+# Read existing words from .vscode/settings.json
+SETTINGS_FILE=".vscode/settings.json"
+if [ -f "$SETTINGS_FILE" ]; then
+    EXISTING_WORDS=$(jq -r '.["cSpell.words"] // []' "$SETTINGS_FILE")
+else
+    EXISTING_WORDS="[]"
+    mkdir -p .vscode
+    echo '{}' >"$SETTINGS_FILE"
+fi
+
+# Run cspell and capture unknown words
+UNKNOWN_WORDS=$(cspell --no-progress --gitignore "**" 2>&1 | grep "Unknown word" | sed -E 's/.*Unknown word \((.*)\).*/\1/' | sort -u)
+
+# Convert existing words to array
+EXISTING_ARRAY=$(echo "$EXISTING_WORDS" | jq -r '.[]' 2>/dev/null || echo "")
+
+# Combine existing and new words, sort, and remove duplicates
+ALL_WORDS=$(echo -e "$EXISTING_ARRAY\n$UNKNOWN_WORDS" | sort -u | grep -v '^$')
+
+# Update settings.json with new words
+TMP_FILE=$(mktemp)
+jq --arg words "$(echo "$ALL_WORDS" | jq -R -s -c 'split("\n")[:-1]')" \
+    '.["cSpell.words"] = ($words | fromjson)' \
+    "$SETTINGS_FILE" >"$TMP_FILE" && mv "$TMP_FILE" "$SETTINGS_FILE"
+
+# Print new words
+echo "New words added:"
+comm -13 <(echo "$EXISTING_ARRAY" | sort) <(echo "$UNKNOWN_WORDS" | sort) | sed 's/^/  /'
+
+# Print total count
+TOTAL_COUNT=$(echo "$ALL_WORDS" | wc -l | tr -d ' ')
+echo "Total word count: $TOTAL_COUNT"
+
+echo "Updated .vscode/settings.json with new words"
