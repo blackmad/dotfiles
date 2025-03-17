@@ -147,3 +147,14 @@ function github_checkout() {
     git clone "$url"
   fi
 }
+
+function github_ssh_checkout() {
+  url=$1
+  if [[ $url == https://* ]]; then
+    git_url=$(echo "$url" | sed 's/^https:\/\//git@/' | sed 's/\//:/2')
+    echo "Using git url instead: $git_url"
+    git clone "$git_url"
+  else
+    git clone "$url"
+  fi
+}

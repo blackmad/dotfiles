@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export PATH=/opt/homebrew/bin:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -72,8 +74,10 @@ export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
 zplug "grigorii-zander/zsh-npm-scripts-autocomplete"
 zplug "g-plane/zsh-yarn-autocompletions", hook-build:"./zplug.zsh", defer:2
+zplug "MichaelAquilina/zsh-auto-notify"
 
-plugins=(git z zsh-syntax-highlighting zsh-autosuggestions yarn-autocompletions notify auto-notify web-search)
+
+plugins=(git z)
 
 # alias cd=z
 
@@ -138,8 +142,4 @@ if [ -f $HOME/.cargo/env ]; then
 fi
 export OP_ACCOUNT="filamentinc"
 
-PATH="/Users/blackmad/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/Users/blackmad/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/Users/blackmad/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/Users/blackmad/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/blackmad/perl5"; export PERL_MM_OPT;
+export PATH=$PATH:/opt/homebrew/bin/
