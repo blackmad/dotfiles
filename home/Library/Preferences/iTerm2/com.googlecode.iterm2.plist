@@ -18,6 +18,8 @@
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>NeverBlockSystemShutdown</key>
+	<false/>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1052,6 +1054,10 @@
 			<string>/Users/blackmad</string>
 		</dict>
 	</array>
+	<key>OnlyWhenMoreTabs</key>
+	<false/>
+	<key>PromptOnQuit</key>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
