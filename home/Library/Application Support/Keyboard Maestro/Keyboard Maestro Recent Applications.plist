@@ -4,11 +4,59 @@
 <array>
 	<dict>
 		<key>BundleIdentifier</key>
+		<string>dev.warp.Warp-Stable</string>
+		<key>Name</key>
+		<string>Warp</string>
+		<key>NewFile</key>
+		<string>/Applications/Warp.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
 		<string>com.apple.systempreferences</string>
 		<key>Name</key>
 		<string>System Settings</string>
 		<key>NewFile</key>
 		<string>/System/Applications/System Settings.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.codeweavers.CrossOverHelper.4DB4563826BAD0EB2F60EE6E42D0EA4B.D7B460B2ACE2473B3D92C221DB864590</string>
+		<key>Name</key>
+		<string>Steam</string>
+		<key>NewFile</key>
+		<string>~/Applications/CrossOver/Steam/Steam.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.valvesoftware.steam</string>
+		<key>Name</key>
+		<string>Steam</string>
+		<key>NewFile</key>
+		<string>~/Library/Application Support/Steam/Steam.AppBundle/Steam</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.apple.archiveutility</string>
+		<key>Name</key>
+		<string>Archive Utility</string>
+		<key>NewFile</key>
+		<string>/System/Library/CoreServices/Applications/Archive Utility.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.valvesoftware.steam</string>
+		<key>Name</key>
+		<string>Steam</string>
+		<key>NewFile</key>
+		<string>/Applications/Steam.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.facebook.archon.developerID</string>
+		<key>Name</key>
+		<string>Messenger</string>
+		<key>NewFile</key>
+		<string>/Applications/Messenger.app</string>
 	</dict>
 	<dict>
 		<key>BundleIdentifier</key>
@@ -25,14 +73,6 @@
 		<string>Google Chrome</string>
 		<key>NewFile</key>
 		<string>/Applications/Google Chrome.app</string>
-	</dict>
-	<dict>
-		<key>BundleIdentifier</key>
-		<string>dev.warp.Warp-Stable</string>
-		<key>Name</key>
-		<string>Warp</string>
-		<key>NewFile</key>
-		<string>/Applications/Warp.app</string>
 	</dict>
 	<dict>
 		<key>BundleIdentifier</key>
