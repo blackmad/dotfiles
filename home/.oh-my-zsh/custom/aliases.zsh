@@ -116,3 +116,54 @@ alias xargs-newline="tr '\n' '\0' | xargs -n1 -t -0"
 
 alias sidecar-ipad="SidecarLauncher connect \"David Blackman’s iPad\""
 alias ipad-sidecar=sidecar-ipad
+
+function plist-track () {
+  local plist_path="$1"
+  if [ -z "$plist_path" ]; then
+    echo "Error: No plist path provided."
+    return 1
+  fi
+
+  if [ ! -d "$HOME/.plists" ]; then
+    echo "Error: Directory ~/.plists does not exist."
+    return 1
+  fi
+
+  cp "$plist_path" "$HOME/.plists/"
+}
+
+function plist-sync-init() {
+  if [ ! -d "$HOME/.plists" ]; then
+    echo "Error: Directory ~/.plists does not exist."
+    return 1
+  fi
+
+  if [ ! -d "$HOME/Library/Preferences" ]; then
+    echo "Error: Directory ~/Library/Preferences does not exist."
+    return 1
+  fi
+
+  cp "$HOME/.plists/"* "$HOME/Library/Preferences/"
+}
+
+function plist-sync() {
+  if [ ! -d "$HOME/.plists" ]; then
+    echo "Error: Directory ~/.plists does not exist."
+    return 1
+  fi
+
+  if [ ! -d "$HOME/Library/Preferences" ]; then
+    echo "Error: Directory ~/Library/Preferences does not exist."
+    return 1
+  fi
+
+  for plist_file in "$HOME/.plists/"*; do
+    plist_filename=$(basename "$plist_file")
+    source_file="$HOME/Library/Preferences/$plist_filename"
+    if [ -f "$source_file" ]; then
+      cp "$source_file" "$plist_file"
+    else
+      echo "Warning: $plist_filename does not exist in ~/Library/Preferences."
+    fi
+  done
+}
