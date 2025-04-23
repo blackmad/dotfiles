@@ -48,5 +48,9 @@
     {
         "key": "shift+cmd+enter",
         "command": "rust-analyzer.run"
+    },
+    {
+        "key": "cmd+i",
+        "command": "composerMode.agent"
     }
 ]

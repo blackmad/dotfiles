@@ -143,3 +143,6 @@ fi
 export OP_ACCOUNT="filamentinc"
 
 export PATH=$PATH:/opt/homebrew/bin/
+
+eval "$(brew shellenv)"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
