@@ -168,4 +168,4 @@ function plist-sync() {
   done
 }
 
-unquarantine=xattr -r -d com.apple.quarantine
+alias unquarantine=xattr -r -d com.apple.quarantine

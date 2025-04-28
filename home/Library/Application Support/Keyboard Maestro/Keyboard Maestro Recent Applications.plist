@@ -4,59 +4,11 @@
 <array>
 	<dict>
 		<key>BundleIdentifier</key>
-		<string>dev.warp.Warp-Stable</string>
+		<string>com.apple.finder</string>
 		<key>Name</key>
-		<string>Warp</string>
+		<string>Finder</string>
 		<key>NewFile</key>
-		<string>/Applications/Warp.app</string>
-	</dict>
-	<dict>
-		<key>BundleIdentifier</key>
-		<string>com.apple.systempreferences</string>
-		<key>Name</key>
-		<string>System Settings</string>
-		<key>NewFile</key>
-		<string>/System/Applications/System Settings.app</string>
-	</dict>
-	<dict>
-		<key>BundleIdentifier</key>
-		<string>com.codeweavers.CrossOverHelper.4DB4563826BAD0EB2F60EE6E42D0EA4B.D7B460B2ACE2473B3D92C221DB864590</string>
-		<key>Name</key>
-		<string>Steam</string>
-		<key>NewFile</key>
-		<string>~/Applications/CrossOver/Steam/Steam.app</string>
-	</dict>
-	<dict>
-		<key>BundleIdentifier</key>
-		<string>com.valvesoftware.steam</string>
-		<key>Name</key>
-		<string>Steam</string>
-		<key>NewFile</key>
-		<string>~/Library/Application Support/Steam/Steam.AppBundle/Steam</string>
-	</dict>
-	<dict>
-		<key>BundleIdentifier</key>
-		<string>com.apple.archiveutility</string>
-		<key>Name</key>
-		<string>Archive Utility</string>
-		<key>NewFile</key>
-		<string>/System/Library/CoreServices/Applications/Archive Utility.app</string>
-	</dict>
-	<dict>
-		<key>BundleIdentifier</key>
-		<string>com.valvesoftware.steam</string>
-		<key>Name</key>
-		<string>Steam</string>
-		<key>NewFile</key>
-		<string>/Applications/Steam.app</string>
-	</dict>
-	<dict>
-		<key>BundleIdentifier</key>
-		<string>com.facebook.archon.developerID</string>
-		<key>Name</key>
-		<string>Messenger</string>
-		<key>NewFile</key>
-		<string>/Applications/Messenger.app</string>
+		<string>/System/Library/CoreServices/Finder.app</string>
 	</dict>
 	<dict>
 		<key>BundleIdentifier</key>
@@ -68,19 +20,19 @@
 	</dict>
 	<dict>
 		<key>BundleIdentifier</key>
-		<string>com.google.Chrome</string>
+		<string>com.apple.MobileSMS</string>
 		<key>Name</key>
-		<string>Google Chrome</string>
+		<string>Messages</string>
 		<key>NewFile</key>
-		<string>/Applications/Google Chrome.app</string>
+		<string>/System/Applications/Messages.app</string>
 	</dict>
 	<dict>
 		<key>BundleIdentifier</key>
-		<string>com.apple.Maps</string>
+		<string>ru.keepcoder.Telegram</string>
 		<key>Name</key>
-		<string>Maps</string>
+		<string>Telegram</string>
 		<key>NewFile</key>
-		<string>/System/Applications/Maps.app</string>
+		<string>/Applications/Telegram.app</string>
 	</dict>
 	<dict>
 		<key>BundleIdentifier</key>
@@ -89,6 +41,342 @@
 		<string>iTerm</string>
 		<key>NewFile</key>
 		<string>/Applications/iTerm.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>notion.id</string>
+		<key>Name</key>
+		<string>Notion</string>
+		<key>NewFile</key>
+		<string>/Applications/Notion.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.codeweavers.CrossOver</string>
+		<key>Name</key>
+		<string>CrossOver</string>
+		<key>NewFile</key>
+		<string>/Applications/CrossOver.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.facebook.archon.developerID</string>
+		<key>Name</key>
+		<string>Messenger</string>
+		<key>NewFile</key>
+		<string>/Applications/Messenger.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>dev.warp.Warp-Stable</string>
+		<key>Name</key>
+		<string>Warp</string>
+		<key>NewFile</key>
+		<string>/Applications/Warp.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.apple.Preview</string>
+		<key>Name</key>
+		<string>Preview</string>
+		<key>NewFile</key>
+		<string>/System/Applications/Preview.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.culturedcode.ThingsMac</string>
+		<key>Name</key>
+		<string>Things</string>
+		<key>NewFile</key>
+		<string>/Applications/Things3.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.apple.Safari</string>
+		<key>Name</key>
+		<string>Safari</string>
+		<key>NewFile</key>
+		<string>/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>net.whatsapp.WhatsApp</string>
+		<key>Name</key>
+		<string>WhatsApp</string>
+		<key>NewFile</key>
+		<string>/Applications/WhatsApp.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.google.Chrome</string>
+		<key>Name</key>
+		<string>Google Chrome</string>
+		<key>NewFile</key>
+		<string>/Applications/Google Chrome.app</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>steamwebhelper</string>
+		<key>NewFile</key>
+		<string>/private/var/folders/tl/40rt5yw54v150s3k8shhw5y00000gn/T/winetemp-22264342-33792-1741249004-0/steamwebhelper.exe</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>org.whispersystems.signal-desktop</string>
+		<key>Name</key>
+		<string>Signal</string>
+		<key>NewFile</key>
+		<string>/Applications/Signal.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.apple.Photos</string>
+		<key>Name</key>
+		<string>Photos</string>
+		<key>NewFile</key>
+		<string>/System/Applications/Photos.app</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>BLUE PRINCE</string>
+		<key>NewFile</key>
+		<string>/private/var/folders/tl/40rt5yw54v150s3k8shhw5y00000gn/T/winetemp-22264342-33792-1741249004-0/BLUE PRINCE.exe</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.codeweavers.CrossOverHelper.4DB4563826BAD0EB2F60EE6E42D0EA4B.FEB449B35C9E0239AC7E54BF1D53F5E6</string>
+		<key>Name</key>
+		<string>Blue Prince</string>
+		<key>NewFile</key>
+		<string>~/Applications/CrossOver/Steam/Blue Prince.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.spotify.client</string>
+		<key>Name</key>
+		<string>Spotify</string>
+		<key>NewFile</key>
+		<string>/Applications/Spotify.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.apple.findmy</string>
+		<key>Name</key>
+		<string>Find My</string>
+		<key>NewFile</key>
+		<string>/System/Applications/FindMy.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.apple.systempreferences</string>
+		<key>Name</key>
+		<string>System Settings</string>
+		<key>NewFile</key>
+		<string>/System/Applications/System Settings.app</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>steamsysinfo</string>
+		<key>NewFile</key>
+		<string>/private/var/folders/tl/40rt5yw54v150s3k8shhw5y00000gn/T/winetemp-22264342-33792-1741249004-0/steamsysinfo.exe</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>explorer</string>
+		<key>NewFile</key>
+		<string>/private/var/folders/tl/40rt5yw54v150s3k8shhw5y00000gn/T/winetemp-22264342-33792-1741249004-0/explorer.exe</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.apple.Notes</string>
+		<key>Name</key>
+		<string>Notes</string>
+		<key>NewFile</key>
+		<string>/System/Applications/Notes.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.valvesoftware.steam</string>
+		<key>Name</key>
+		<string>Steam</string>
+		<key>NewFile</key>
+		<string>~/Library/Application Support/Steam/Steam.AppBundle/Steam</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.valvesoftware.steam</string>
+		<key>Name</key>
+		<string>Steam</string>
+		<key>NewFile</key>
+		<string>/Applications/Steam.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.codeweavers.CrossOverHelper.4DB4563826BAD0EB2F60EE6E42D0EA4B.D7B460B2ACE2473B3D92C221DB864590</string>
+		<key>Name</key>
+		<string>Steam</string>
+		<key>NewFile</key>
+		<string>~/Applications/CrossOver/Steam/Steam.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>org.mozilla.firefox</string>
+		<key>Name</key>
+		<string>Firefox</string>
+		<key>NewFile</key>
+		<string>/Applications/Firefox.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>org.torproject.torbrowser</string>
+		<key>Name</key>
+		<string>Tor Browser</string>
+		<key>NewFile</key>
+		<string>/Applications/Tor Browser.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.apple.printcenter</string>
+		<key>Name</key>
+		<string>Print Center</string>
+		<key>NewFile</key>
+		<string>/System/Applications/Utilities/Print Center.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.apple.TV</string>
+		<key>Name</key>
+		<string>TV</string>
+		<key>NewFile</key>
+		<string>/System/Applications/TV.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.endel.endel</string>
+		<key>Name</key>
+		<string>Endel</string>
+		<key>NewFile</key>
+		<string>/Applications/Endel.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.tuesday.js</string>
+		<key>Name</key>
+		<string>Tuesday JS</string>
+		<key>NewFile</key>
+		<string>/Applications/Tuesday JS.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.sonos.macController2</string>
+		<key>Name</key>
+		<string>Sonos</string>
+		<key>NewFile</key>
+		<string>/Applications/Sonos.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.todesktop.230313mzl4w4u92</string>
+		<key>Name</key>
+		<string>Cursor</string>
+		<key>NewFile</key>
+		<string>/Applications/Cursor.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.pixelmatorteam.pixelmator.x</string>
+		<key>Name</key>
+		<string>Pixelmator Pro</string>
+		<key>NewFile</key>
+		<string>/Applications/Pixelmator Pro.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.apple.FaceTime</string>
+		<key>Name</key>
+		<string>FaceTime</string>
+		<key>NewFile</key>
+		<string>/System/Applications/FaceTime.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.apple.GenerativePlaygroundApp</string>
+		<key>Name</key>
+		<string>Image Playground</string>
+		<key>NewFile</key>
+		<string>/System/Applications/Image Playground.app</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>winecfg</string>
+		<key>NewFile</key>
+		<string>/private/var/folders/tl/40rt5yw54v150s3k8shhw5y00000gn/T/winetemp-22264342-33792-1741249004-0/winecfg.exe</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>rundll32</string>
+		<key>NewFile</key>
+		<string>/private/var/folders/tl/40rt5yw54v150s3k8shhw5y00000gn/T/winetemp-22264342-33792-1741249004-0/rundll32.exe</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>wineloader</string>
+		<key>NewFile</key>
+		<string>/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/CrossOver-Hosted Application/wineloader</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.stairways.keyboardmaestro.editor</string>
+		<key>Name</key>
+		<string>Keyboard Maestro</string>
+		<key>NewFile</key>
+		<string>/Applications/Keyboard Maestro.app</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Steam</string>
+		<key>NewFile</key>
+		<string>/private/var/folders/tl/40rt5yw54v150s3k8shhw5y00000gn/T/winetemp-22264342-33792-1741249004-0/Steam.exe</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>SteamSetup</string>
+		<key>NewFile</key>
+		<string>/private/var/folders/tl/40rt5yw54v150s3k8shhw5y00000gn/T/winetemp-22264342-33792-1741249004-0/SteamSetup.exe</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>VC_redist.x64</string>
+		<key>NewFile</key>
+		<string>/private/var/folders/tl/40rt5yw54v150s3k8shhw5y00000gn/T/winetemp-22264342-33792-1741249004-0/VC_redist.x64.exe</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>VC_redist.x86</string>
+		<key>NewFile</key>
+		<string>/private/var/folders/tl/40rt5yw54v150s3k8shhw5y00000gn/T/winetemp-22264342-33792-1741249004-0/VC_redist.x86.exe</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>arialb32</string>
+		<key>NewFile</key>
+		<string>/private/var/folders/tl/40rt5yw54v150s3k8shhw5y00000gn/T/winetemp-22264342-33792-1741249004-0/arialb32.exe</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.apple.archiveutility</string>
+		<key>Name</key>
+		<string>Archive Utility</string>
+		<key>NewFile</key>
+		<string>/System/Library/CoreServices/Applications/Archive Utility.app</string>
+	</dict>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.apple.Maps</string>
+		<key>Name</key>
+		<string>Maps</string>
+		<key>NewFile</key>
+		<string>/System/Applications/Maps.app</string>
 	</dict>
 	<dict>
 		<key>BundleIdentifier</key>
