@@ -23,7 +23,7 @@ alias castle='cd /Users/blackmad/.homesick/repos/dotfiles/home/'
 alias ec="code $HOME/.zshrc"
 alias reload="source $HOME/.zshrc"
 
-export CODE_EDITOR="code"
+export CODE_EDITOR="cursor"
 # edit my main list of aliases
 alias edit-aliases="$CODE_EDITOR ~/.oh-my-zsh/custom/aliases.zsh"
 alias edit-zsh="$CODE_EDITOR ~/.oh-my-zsh/custom/"
@@ -169,3 +169,39 @@ function plist-sync() {
 }
 
 alias unquarantine=xattr -r -d com.apple.quarantine
+
+alias gh-clone='function _gh_clone() {
+  if [ -z "$1" ]; then
+    echo "Error: No repository name provided."
+    return 1
+  fi
+
+  REPO="$1"
+  GIT_URL="git@github.com:$USER/$REPO.git"
+
+  echo "Attempting to clone $GIT_URL..."
+  git clone "$GIT_URL" 2>/dev/null
+
+  if [ $? -ne 0 ]; then
+    echo "Error: Repository $REPO not found."
+    echo "Searching for similar repositories using gh..."
+    similar_repos=$(gh repo list "$USER" --limit 10 --json name --jq ".[] | select(.name | contains(\"$REPO\")) | .name")
+    
+    repo_count=$(echo "$similar_repos" | wc -l)
+    
+    if [ "$repo_count" -eq 1 ]; then
+      echo "One similar repository found: $similar_repos"
+      echo "Would you like to clone this repository? (y/n): "
+      read choice
+      if [ "$choice" = "y" ]; then
+        git clone "git@github.com:$USER/$similar_repos.git"
+      fi
+    elif [ "$repo_count" -gt 1 ]; then
+      echo "Multiple similar repositories found:"
+      echo "$similar_repos"
+    else
+      echo "No similar repositories found."
+    fi
+  fi
+}; _gh_clone'
+
